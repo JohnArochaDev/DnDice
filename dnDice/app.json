@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "scheme": "dndice",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": false,
+    "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
@@ -24,8 +24,6 @@
     },
     "plugins": [
       "expo-router",
-      "expo-sensors",
-      "expo-haptics",
       [
         "expo-splash-screen",
         {
