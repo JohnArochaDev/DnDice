@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 import {
   DarkTheme,
   DefaultTheme,
@@ -10,6 +10,7 @@ import { SafeAreaView, StyleSheet } from "react-native";
 import WebView from "react-native-webview";
 import { ShakeDetector } from "@/components/ShakeDetector";
 import "react-native-reanimated";
+import * as Haptics from "expo-haptics";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 
@@ -23,10 +24,11 @@ export default function RootLayout() {
   const isLoaded = useRef(false);
 
   useEffect(() => {
-    // Add shake listener
     ShakeDetector.addListener(() => {
       if (isLoaded.current) {
-        webViewRef.current?.injectJavaScript('window.handleRollDice();');
+        webViewRef.current?.injectJavaScript("window.handleRollDice();");
+
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
       }
     });
 
@@ -52,7 +54,9 @@ export default function RootLayout() {
           allowsInlineMediaPlayback={true}
           mediaPlaybackRequiresUserAction={false}
           originWhitelist={["*"]}
-          onLoadEnd={() => { isLoaded.current = true; }}
+          onLoadEnd={() => {
+            isLoaded.current = true;
+          }}
           onError={(syntheticEvent) => {
             const { nativeEvent } = syntheticEvent;
             console.error("WebView error: ", nativeEvent);
