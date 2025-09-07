@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "scheme": "dndice",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "ios": {
       "supportsTablet": true
     },
@@ -15,8 +15,11 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.JohnDev.DnDice",
-      "versionCode": 1
+      "package": "com.jpjpjppj.dnDice",
+      "versionCode": 1,
+      "compileSdkVersion": 34,
+      "targetSdkVersion": 34,
+      "minSdkVersion": 24
     },
     "web": {
       "bundler": "metro",
@@ -27,6 +30,7 @@
       [
         "expo-splash-screen",
         {
+          "image": "./assets/splash.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
@@ -34,11 +38,6 @@
       ]
     ],
     "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "experiments": {
       "typedRoutes": true
     },
