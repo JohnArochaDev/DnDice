@@ -14,7 +14,9 @@
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.JohnDev.DnDice",
+      "versionCode": 1
     },
     "web": {
       "bundler": "metro",
@@ -22,6 +24,8 @@
     },
     "plugins": [
       "expo-router",
+      "expo-sensors",
+      "expo-haptics",
       [
         "expo-splash-screen",
         {
@@ -31,6 +35,12 @@
         }
       ]
     ],
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "experiments": {
       "typedRoutes": true
     }
